@@ -2,7 +2,7 @@
 
 A modular implementation of Blahut-Arimoto type algorithms for the feed-forward multi-agent systems in information-theoretic bounded rationality developed in [Gottwald, Braun. Systems of bounded rational agents with information-theoretic constraints](https://doi.org/).
 
-A particular multi-agent architecture is indexed by a type and shape (as introduced in the paper). The type labels the general structure of the multi-agent system, i.e. the Bayesian network of random variables and their interdependencies, whereas the shape is a list of  each node's agent occupation number, i.e. a shape of `[1,2,4]` means that the first random variable consists of one agent, the second of two, and the third of four agents. The implementation is modular in the sense that a given multi-agent systems consists of a set number of nodes (= random variables), that are connected as specified in the file `BMA_sysconfig.py`. Currently, the algorithm is configured for all cases with `N<4`, but arbitrary types can be implemented by simply updating this file.
+A particular multi-agent architecture is indexed by a type and shape (as introduced in the paper). The type labels the general structure of the multi-agent system, i.e. the Bayesian network of random variables and their interdependencies, whereas the shape is a list of  each node's agent occupation number, i.e. a shape of `[1,2,4]` means that the first random variable consists of one agent, the second of two, and the third of four agents. The implementation is modular in the sense that a given multi-agent system consists of a set number of nodes (= random variables), that are connected as specified in the file `BMA_sysconfig.py`. Currently, the algorithm is configured for all cases with one, two and three nodes, but arbitrary types can easily be implemented by updating this file.
 
 ## Examples
 
@@ -34,14 +34,6 @@ See also [BA_class](https://github.com/sgttwld/BA_class) and [Interactive Jupyte
 
 ## Overview
 
-### Useful information
-```python
-BMA.get_types()                     # print all currently implemented types  
-BMA.get_shapes(tp=(0,3),n=10)       # print all possible shapes for n number of agents
-BMA.get_M(tp=(0,3),M=20)            # print the required intermediate dimensions
-BMA.draw_graphs(tps,fsize=(14,10))  # show graphs of the types in the list tps
-```
-
 ### Usage
 ```python
 import modules.BMA_system as BMA                  
@@ -53,6 +45,14 @@ MA.graph()
 MA.initialize(U,beta=[5.0]*10,M=[20])
 # running the Blahut-Arimoto algorithm:
 MA.iterate()
+```
+
+### Useful information
+```python
+BMA.get_types()                     # print all currently implemented types  
+BMA.get_shapes(tp=(0,3),n=10)       # print all possible shapes for n number of agents
+BMA.get_M(tp=(0,3),M=20)            # print the required intermediate dimensions
+BMA.draw_graphs(tps,fsize=(14,10))  # show graphs of the types in the list tps
 ```
 
 ### Interesting quantities
@@ -75,7 +75,7 @@ MA.nd       # list of the nodes (Node objects) in the system
 MA.ag       # list of the agents (Agent objects) in the system
 ```
 
-#### `Dist`(ribution) object (defined in `BMA_support.py`)
+#### `Dist` object (defined in `BMA_support.py`)
 ```python
 dist = MA.joint   # example of a Dist object
 dist.val          # numpy array that contains the values of the "distribution"
