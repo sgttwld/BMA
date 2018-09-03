@@ -51,7 +51,7 @@ MA.iterate()
 ```python
 BMA.get_types()                     # print all currently implemented types  
 BMA.get_shapes(tp=(0,3),n=10)       # print all possible shapes for n number of agents
-BMA.get_M(tp=(0,3),M=20)            # print the required intermediate dimensions
+BMA.get_M(tp=(0,3),M=20)            # print the required intermediate non-selector dims
 BMA.draw_graphs(tps,fsize=(14,10))  # show graphs of the types in the list tps
 ```
 
