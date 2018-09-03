@@ -30,7 +30,7 @@ MA.iterate()
 Note that here, the utility function `U` must be a numpy array of shape `(N,K)`, where `N` is the number of world states, and `K` the number of actions.
 
 
-See also [BA_class](https://github.com/sgttwld/BA_class) and [Interactive Jupyter-Notebooks](https://github.com/sgttwld/blahut-arimoto) for two different implementations of the one- and two-step cases.
+See also [BA_class](https://github.com/sgttwld/BA_class) and [these](https://github.com/sgttwld/blahut-arimoto) interactive Jupyter notebooks for two different implementations of the one- and two-step cases.
 
 ## Overview
 
